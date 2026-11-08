@@ -1,0 +1,584 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>صالون الزعيم | حلاقة رجالي</title>
+  <meta name="description" content="صالون الزعيم - قصات وذقن ومزاج. شوف شغلنا واحجز دورك على واتساب من غير زحمة.">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0c0c0d;
+      --card: #161618;
+      --line: #2a2a2e;
+      --gold: #d9a441;
+      --gold2: #ffd27a;
+      --red: #d62839;
+      --blue: #1d4ed8;
+      --text: #f5f2ec;
+      --muted: #a39e94;
+      --wa: #25d366;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      font-family: 'Cairo', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      padding-bottom: 88px
+    }
+
+    .wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 18px
+    }
+
+    section {
+      padding: 40px 0
+    }
+
+    h2 {
+      font-size: 1.65rem;
+      font-weight: 900;
+      line-height: 1.3
+    }
+
+    h2 span {
+      color: var(--gold2)
+    }
+
+    .sub {
+      color: var(--muted);
+      margin: 4px 0 22px
+    }
+
+    /* شريط الحلاق */
+    .pole {
+      height: 10px;
+      background: repeating-linear-gradient(-45deg, var(--red) 0 14px, #fff 14px 28px, var(--blue) 28px 42px, #fff 42px 56px);
+      background-size: 80px 100%;
+      animation: slide 2.5s linear infinite
+    }
+
+    @keyframes slide {
+      to {
+        background-position: 80px 0
+      }
+    }
+
+    /* Hero */
+    .hero {
+      padding: 58px 0 46px;
+      text-align: center;
+      background: radial-gradient(ellipse at 50% 0%, #3a2a10 0%, var(--bg) 70%)
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--gold);
+      color: #1b1305;
+      font-weight: 900;
+      font-size: .85rem;
+      padding: 2px 16px;
+      border-radius: 99px;
+      margin-bottom: 18px
+    }
+
+    .hero h1 {
+      font-size: 2.6rem;
+      font-weight: 900;
+      line-height: 1.25
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: var(--gold2);
+      display: block
+    }
+
+    .hero p {
+      color: var(--muted);
+      margin: 14px auto 28px;
+      max-width: 470px;
+      font-size: 1.05rem
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: 14px;
+      font-weight: 900;
+      font-size: 1.1rem;
+      text-decoration: none;
+      font-family: inherit;
+      transition: transform .15s
+    }
+
+    .btn:active {
+      transform: scale(.97)
+    }
+
+    .btn-wa {
+      background: var(--wa);
+      color: #05240e;
+      box-shadow: 0 6px 24px rgba(37, 211, 102, .28)
+    }
+
+    .btn-ghost {
+      border: 1px solid var(--line);
+      color: var(--text);
+      margin-top: 10px
+    }
+
+    .hero .row {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap
+    }
+
+    .hero .row .btn-ghost {
+      margin-top: 0
+    }
+
+    /* شريط مميزات */
+    .strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin-top: 34px
+    }
+
+    .strip div {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 12px 6px;
+      font-weight: 800;
+      font-size: .9rem
+    }
+
+    .strip small {
+      display: block;
+      color: var(--muted);
+      font-weight: 400;
+      font-size: .78rem
+    }
+
+    /* Gallery */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px
+    }
+
+    .tile {
+      aspect-ratio: 1/1.05;
+      border-radius: 16px;
+      overflow: hidden;
+      position: relative;
+      border: 1px solid var(--line);
+      background: linear-gradient(150deg, #2f2412, #161618 70%)
+    }
+
+    .tile img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block
+    }
+
+    .tile svg.ic {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 56px;
+      height: 56px;
+      transform: translate(-50%, -62%);
+      opacity: .9
+    }
+
+    .tile .cap {
+      position: absolute;
+      inset: auto 0 0 0;
+      padding: 26px 12px 10px;
+      font-weight: 800;
+      background: linear-gradient(transparent, rgba(0, 0, 0, .85))
+    }
+
+    .tile .cap small {
+      display: block;
+      color: var(--gold2);
+      font-weight: 600;
+      font-size: .8rem
+    }
+
+    /* Prices */
+    .pkg {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 16px 18px;
+      margin-bottom: 10px
+    }
+
+    .pkg b {
+      font-size: 1.08rem
+    }
+
+    .pkg small {
+      display: block;
+      color: var(--muted)
+    }
+
+    .price {
+      color: var(--gold2);
+      font-weight: 900;
+      font-size: 1.3rem;
+      white-space: nowrap
+    }
+
+    .pkg.hot {
+      border: 1.5px solid var(--gold);
+      background: linear-gradient(135deg, #2a2010, var(--card))
+    }
+
+    .tag {
+      background: var(--red);
+      color: #fff;
+      font-size: .72rem;
+      font-weight: 800;
+      padding: 1px 9px;
+      border-radius: 99px;
+      margin-inline-start: 6px
+    }
+
+    /* Why */
+    .why {
+      display: grid;
+      gap: 10px
+    }
+
+    .why .box {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start
+    }
+
+    .why .n {
+      flex: none;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--gold);
+      color: #1b1305;
+      display: grid;
+      place-items: center;
+      font-weight: 900
+    }
+
+    .box {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 16px 18px
+    }
+
+    .box h3 {
+      font-size: 1.05rem;
+      margin-bottom: 2px
+    }
+
+    .box p {
+      color: var(--muted)
+    }
+
+    /* Offer */
+    .offer {
+      text-align: center;
+      background: linear-gradient(135deg, var(--red), #8f1626);
+      border-radius: 20px;
+      padding: 26px 18px
+    }
+
+    .offer h2 {
+      font-size: 1.5rem
+    }
+
+    .offer p {
+      margin: 6px 0 16px;
+      opacity: .95
+    }
+
+    .offer .btn {
+      background: #fff;
+      color: #7a1220
+    }
+
+    /* FAQ */
+    details {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 14px 18px;
+      margin-bottom: 8px
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 800;
+      list-style: none
+    }
+
+    summary::after {
+      content: "+";
+      float: left;
+      color: var(--gold2);
+      font-size: 1.3rem;
+      line-height: 1
+    }
+
+    details[open] summary::after {
+      content: "–"
+    }
+
+    details p {
+      color: var(--muted);
+      margin-top: 8px
+    }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: .85rem;
+      padding: 28px 0 12px;
+      border-top: 1px solid var(--line)
+    }
+
+    .sticky {
+      position: fixed;
+      inset: auto 0 0 0;
+      background: rgba(12, 12, 13, .94);
+      backdrop-filter: blur(8px);
+      border-top: 1px solid var(--line);
+      padding: 12px 18px;
+      z-index: 10
+    }
+
+    .sticky .btn {
+      display: flex;
+      width: 100%;
+      max-width: 720px;
+      margin: 0 auto
+    }
+
+    @media(min-width:640px) {
+      .grid {
+        grid-template-columns: repeat(3, 1fr)
+      }
+
+      .hero h1 {
+        font-size: 3.4rem
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!--
+  ===== قبل ما تعرض الصفحة على محل =====
+  1) الرقم: دوّر على 201000000000 وغيّره (بتتكرر 3 مرات). صيغة الرقم: 20 + الرقم من غير الصفر.
+  2) الاسم والأسعار والعنوان والمواعيد: اكتب بتوع المحل الحقيقي.
+  3) الصور: حط صور الشغل في فولدر img وبدّل مربعات المعرض (الطريقة تحت في تعليق المعرض).
+-->
+
+  <div class="pole"></div>
+
+  <header class="hero">
+    <div class="wrap">
+      <span class="badge">صالون رجالي · الدور عليك</span>
+      <h1>ظبّط دماغك<em>عند الزعيم</em></h1>
+      <p>قصة تفرق، وذقن على السكين، وتشطيب يخليك تبص في المراية وتقول "إيه الحلاوة دي". احجز دورك من الموبايل من غير
+        زحمة ولا وقفة.</p>
+      <div class="row">
+        <a class="btn btn-wa"
+          href="https://wa.me/201000000000?text=%D8%A3%D9%87%D9%84%D8%A7%D9%8B%20%D9%8A%D8%A7%20%D8%B2%D8%B9%D9%8A%D9%85%D8%8C%20%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D8%AD%D8%AC%D8%B2%20%D8%AF%D9%88%D8%B1">احجز
+          دورك واتساب</a>
+        <a class="btn btn-ghost" href="#works">اتفرج على شغلنا</a>
+      </div>
+      <div class="strip">
+        <div>أدوات متعقمة<small>كل زبون بطقمه</small></div>
+        <div>بالمواعيد<small>من غير ما تستنى</small></div>
+        <div>مكان مكيّف<small>وقعدة محترمة</small></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <section id="works">
+      <h2>شغل <span>الزعيم</span></h2>
+      <p class="sub">بص بنفسك وإنت مستني دورك، وإختار القصة اللي على مزاجك.</p>
+      <!--
+      لتغيير الصور: حط صورك في فولدر img وبدّل أي مربع بالشكل ده:
+      <div class="tile"><img src="img/1.jpg" alt="فيد كلاسيك"><div class="cap">فيد كلاسيك<small>اطلبها باسمها</small></div></div>
+      خد إذن الزبون قبل ما تنشر وشه، أو صوّر القصة من الخلف أو من الجنب.
+    -->
+      <div class="grid">
+        <div class="tile"><img src="https://h.top4top.io/p_3964lxg532.jpg" alt="فيد كلاسيك">
+          <div class="cap">فيد كلاسيك<small>الأكتر طلباً</small></div>
+        </div>
+        <div class="tile"><img src="https://h.top4top.io/p_3964lxg532.jpg" alt="قصة الأولاد">
+          <div class="cap">قصة عصرية<small>على الموضة</small></div>
+        </div>
+        <div class="tile"><img src="https://h.top4top.io/p_3964lxg532.jpg" alt="قصة الأولاد">
+          <div class="cap">ذقن على السكين<small>تحديد نضيف</small></div>
+        </div>
+        <div class="tile"><img src="https://h.top4top.io/p_3964lxg532.jpg" alt="قصة الأولاد">
+          <div class="cap">قصة الشباب<small>سايد كات</small></div>
+        </div>
+        <div class="tile"><img src="https://h.top4top.io/p_3964lxg532.jpg" alt="قصة الأولاد">
+          <div class="cap">قصة الأولاد<small>بصبر وحنية</small></div>
+        </div>
+        <div class="tile"><img src="https://h.top4top.io/p_3964lxg532.jpg" alt="قصة الأولاد">
+          <div class="cap">قبل وبعد<small>الفرق واضح</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="prices">
+      <h2>الأسعار <span>على المكشوف</span></h2>
+      <p class="sub">اللي مكتوب هو اللي بتدفعه، من غير لف ولا دوران.</p>
+      <div class="pkg">
+        <div><b>حلاقة شعر</b><small>قصة + تشطيب + تسريح</small></div>
+        <div class="price">80 ج</div>
+      </div>
+      <div class="pkg">
+        <div><b>ذقن</b><small>تحديد + فوطة سخنة</small></div>
+        <div class="price">50 ج</div>
+      </div>
+      <div class="pkg hot">
+        <div><b>باكدج العريس <span class="tag">الأكتر طلباً</span></b><small>شعر + ذقن + تنضيف بشرة + ماسك</small></div>
+        <div class="price">350 ج</div>
+      </div>
+      <div class="pkg">
+        <div><b>باكدج الشباب</b><small>شعر + ذقن في دور واحد</small></div>
+        <div class="price">110 ج</div>
+      </div>
+      <div class="pkg">
+        <div><b>هات صاحبك</b><small>تلاتة مع بعض، قصة لكل واحد بخصم</small></div>
+        <div class="price">200 ج</div>
+      </div>
+    </section>
+
+    <section id="why">
+      <h2>ليه <span>تيجي عندنا؟</span></h2>
+      <p class="sub">&nbsp;</p>
+      <div class="why">
+        <div class="box">
+          <div class="n">1</div>
+          <div>
+            <h3>الدور محفوظ</h3>
+            <p>ابعتلنا واتساب وقول إنت عايز إمتى، وإحنا نقولك الميعاد وإنت جاي على الجاهز.</p>
+          </div>
+        </div>
+        <div class="box">
+          <div class="n">2</div>
+          <div>
+            <h3>النضافة أولاً</h3>
+            <p>الأدوات متعقمة، والفوطة جديدة لكل زبون.</p>
+          </div>
+        </div>
+        <div class="box">
+          <div class="n">3</div>
+          <div>
+            <h3>قول عايز إيه وخلاص</h3>
+            <p>هات صورة القصة اللي عجباك على الموبايل وإحنا نعملهالك.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="offer">
+        <h2>هات صاحبك واتخانق على الخصم</h2>
+        <p>تعالى إنت واتنين من صحابك، ووفروا في القصة.</p>
+        <a class="btn"
+          href="https://wa.me/201000000000?text=%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D8%AD%D8%AC%D8%B2%20%D8%A8%D8%A7%D9%83%D8%AF%D8%AC%20%D9%87%D8%A7%D8%AA%20%D8%B5%D8%A7%D8%AD%D8%A8%D9%83">احجز
+          لـ 3 أفراد</a>
+      </div>
+    </section>
+
+    <section id="info">
+      <h2>تعالى <span>زورنا</span></h2>
+      <p class="sub">&nbsp;</p>
+      <div class="why">
+        <div class="box">
+          <h3>المواعيد</h3>
+          <p>كل يوم من 11 الصبح لـ 11 بالليل<br>الجمعة من 2 الضهر</p>
+        </div>
+        <div class="box">
+          <h3>العنوان</h3>
+          <p>اكتب هنا عنوان المحل وأقرب علامة مميزة</p>
+          <a class="btn btn-ghost" style="padding:9px 20px;font-size:.95rem"
+            href="https://maps.google.com/?q=ضع+لينك+المحل+هنا" target="_blank" rel="noopener">افتح الخريطة</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <h2>أسئلة <span>بتتسأل كتير</span></h2>
+      <p class="sub">&nbsp;</p>
+      <details>
+        <summary>لازم أحجز قبلها؟</summary>
+        <p>مش لازم، بس الحجز بيضمنلك إنك متستناش. ابعتلنا واتساب وخلاص.</p>
+      </details>
+      <details>
+        <summary>بتحلقوا أطفال؟</summary>
+        <p>أكيد، وبصبر. اكتب في الرسالة عمر الولد.</p>
+      </details>
+      <details>
+        <summary>أجيب صورة القصة معايا؟</summary>
+        <p>أهلاً وسهلاً، هات الصورة وإحنا نظبطهالك على قد ما الشعر يسمح.</p>
+      </details>
+      <details>
+        <summary>بتقبلوا دفع كاش بس؟</summary>
+        <p>ابعت باي وسيلة تحبها واطلب ال انت عايزه</p>
+      </details>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="wrap">صالون الزعيم · ظبّط دماغك وارجع مرتاح</div>
+  </footer>
+
+  <div class="sticky">
+    <a class="btn btn-wa"
+      href="https://wa.me/201000848623?text=%D8%A3%D9%87%D9%84%D8%A7%D9%8B%20%D9%8A%D8%A7%20%D8%B2%D8%B9%D9%8A%D9%85%D8%8C%20%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A3%D8%AD%D8%AC%D8%B2%20%D8%AF%D9%88%D8%B1">احجز
+      دورك دلوقتي على واتساب</a>
+  </div>
+
+</body>
+
+</html>
